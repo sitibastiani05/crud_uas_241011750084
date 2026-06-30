@@ -1,0 +1,810 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --primary:#2563eb;
+    --secondary:#1e40af;
+    --dark:#1f2937;
+    --light:#f8fafc;
+    --warning:#FFD54F;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+a{
+    text-decoration:none;
+    transition:.3s;
+}
+
+.section-title{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn{
+    border-radius:12px;
+    transition:.35s ease;
+    font-weight:600;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+}
+
+.btn-primary-custom{
+    background:var(--primary);
+    color:white;
+    padding:12px 28px;
+    border:none;
+}
+
+.btn-primary-custom:hover{
+    background:var(--secondary);
+    color:white;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.92)!important;
+    backdrop-filter:blur(15px);
+}
+
+.navbar-brand{
+    font-size:1.4rem;
+    font-weight:700;
+}
+
+.nav-link{
+
+    position:relative;
+
+    padding:10px 18px !important;
+
+    margin-left:8px;
+
+    font-weight:600;
+
+    border-radius:12px;
+
+}
+
+.nav-link:hover{
+
+    color:white !important;
+
+    background:var(--primary);
+
+    transform:translateY(-2px);
+
+}
+
+.nav-link.active{
+
+    background:var(--primary);
+
+    color:white !important;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:5px;
+
+    left:50%;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--warning);
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+    border-radius:30px;
+
+}
+
+.nav-link:hover::after,
+
+.nav-link.active::after{
+
+    width:60%;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(rgba(18,43,148,.80),
+
+    rgba(18,43,148,.82)),
+
+    url('/images/banner/banner.png');
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    min-height:580px;
+
+    display:flex;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+.hero-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.15);
+
+}
+
+.hero-section .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero-section h1{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    animation:fadeUp .8s;
+
+}
+
+.hero-section p{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    max-width:650px;
+
+    color:#ececec;
+
+    animation:fadeUp 1s;
+
+}
+
+.hero-btn{
+
+    margin-top:25px;
+
+    animation:fadeUp 1.2s;
+
+}
+
+.hero-outline{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.hero-outline:hover{
+
+    background:white;
+
+    color:var(--primary);
+
+}
+
+.hero-stat{
+
+    margin-top:50px;
+
+}
+
+.hero-stat h3{
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.hero-stat small{
+
+    color:#ddd;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+   WORKSHOP
+========================== */
+
+.workshop-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.workshop-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 40px rgba(0,0,0,.18);
+
+}
+
+.workshop-image{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.workshop-card:hover .workshop-image{
+
+    transform:scale(1.08);
+
+}
+
+.workshop-card h5{
+
+    min-height:56px;
+
+}
+
+.date-badge{
+
+    position:absolute;
+
+    left:15px;
+
+    top:15px;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:8px 12px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+.card-body small{
+
+    display:block;
+
+    color:#6c757d;
+
+    margin-bottom:5px;
+
+}
+
+/* ==========================
+   PAGINATION
+========================== */
+
+.pagination{
+
+    font-size:14px;
+
+}
+
+.pagination svg{
+
+    width:16px!important;
+
+    height:16px!important;
+
+}
+
+.page-link{
+
+    transition:.3s;
+
+}
+
+.page-link:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================
+   HERO ANIMATION
+========================== */
+
+.hero-section{
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(15,23,42,.22);
+}
+
+.hero-section .container{
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1{
+    animation: fadeUp .8s ease;
+}
+
+.hero-section p{
+    animation: fadeUp 1s ease;
+}
+
+.hero-btn{
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-stat{
+    animation: fadeUp 1.4s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==========================
+   HERO TITLE
+========================== */
+
+.hero-section h1 span{
+    color:#FFD54F;
+}
+
+/* ==========================
+   NAVBAR EFFECT
+========================== */
+
+.nav-link{
+    position:relative;
+}
+
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:5px;
+    transform:translateX(-50%);
+    width:0;
+    height:3px;
+    border-radius:30px;
+    background:#FFD54F;
+    transition:.35s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+    width:65%;
+}
+
+/* ==========================
+   COUNTER CARD
+========================== */
+
+.hero-stat h3{
+    font-size:34px;
+    font-weight:700;
+}
+
+.hero-stat small{
+    font-size:15px;
+    color:#ececec;
+}
+
+/* ==========================
+   ADMIN BACKGROUND
+========================== */
+
+.admin-bg{
+
+    background:
+    linear-gradient(rgba(245,247,251,.90),
+    rgba(245,247,251,.90)),
+    url('/images/banner/banner.png');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+}
+
+/* ==========================
+   ADMIN CARD
+========================== */
+
+.admin-bg .card{
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(8px);
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar-link{
+    transition:.35s;
+}
+
+.sidebar-link:hover{
+    transform:translateX(8px);
+}
+
+.sidebar-link.active{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* ==========================
+   SCROLL
+========================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ==========================
+   SECTION ANIMATION
+========================== */
+
+.card,
+.workshop-card,
+.btn{
+    animation:fadeCard .5s ease;
+}
+
+@keyframes fadeCard{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.hero-section{
+    min-height:470px;
+}
+
+.hero-section h1{
+    font-size:34px;
+}
+
+.hero-section p{
+    font-size:16px;
+}
+
+.hero-stat h3{
+    font-size:28px;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+}
+
+/* ===================================
+   ADMIN MODERN
+=================================== */
+
+.admin-bg{
+
+    background:
+    linear-gradient(rgba(241,245,249,.92),
+    rgba(241,245,249,.92)),
+    url('/images/banner/banner.png');
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+}
+
+.sidebar-admin{
+
+    width:270px;
+
+    min-height:100vh;
+
+    background:#0f172a;
+
+    padding:35px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:8px 0 30px rgba(0,0,0,.15);
+
+}
+
+.logo-admin{
+
+    color:white;
+
+    font-weight:700;
+
+    margin-bottom:40px;
+
+}
+
+.admin-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.avatar{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.admin-content{
+
+    flex:1;
+
+    padding:45px;
+
+}
+
+.sidebar-link{
+
+    display:block;
+
+    color:white;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.sidebar-link:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateX(8px);
+
+}
+
+.sidebar-link.active{
+
+    background:#2563eb;
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+/* ==========================
+   LOGIN
+========================== */
+
+.input-group-text{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+}
+
+.input-group .form-control{
+
+    border-left:none;
+
+}
+
+.input-group{
+
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.card{
+
+    animation:fadeCard .7s ease;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer a{
+
+    transition:.3s;
+
+}
+
+footer a:hover{
+
+    color:#FFD54F !important;
+
+    padding-left:6px;
+
+}
+
+footer .bi-instagram:hover,
+footer .bi-linkedin:hover,
+footer .bi-github:hover{
+
+    transform:scale(1.2);
+
+}
